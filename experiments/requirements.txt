@@ -1,0 +1,6 @@
+pyspark==3.5.9
+# For Spark 4.0.1 trials (02_compaction_s3.py, 04_compaction_spark4.py): use pyspark==4.0.1
+# Iceberg JARs loaded via spark.jars.packages at runtime (see scripts)
+# Iceberg version used: 1.11.0
+# Java 17 required
+matplotlib>=3.7  # figures/gen_paired_bars.py only

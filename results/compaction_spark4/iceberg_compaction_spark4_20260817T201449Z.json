@@ -1,0 +1,893 @@
+{
+  "experiment": "EXP-13: Apache Iceberg small-file compaction",
+  "timestamp_utc": "20260817T201449Z",
+  "scope": "Local-filesystem microbenchmark; not an object-store or production-scale benchmark.",
+  "parameters": {
+    "batches": 200,
+    "rows_per_batch": 5000,
+    "measure_every": 25,
+    "warmups": 2,
+    "repetitions": 7,
+    "shuffle_partitions": 4,
+    "format_version": 2
+  },
+  "environment": {
+    "os": "macOS-26.6-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "processor": "arm",
+    "logical_cpu_count": 14,
+    "memory_bytes": 38654705664,
+    "python_version": "3.14.2",
+    "spark_version": "4.0.1",
+    "iceberg_version": "1.11.0",
+    "iceberg_maven_package": "org.apache.iceberg:iceberg-spark-runtime-4.0_2.13:1.11.0",
+    "java_version": "17.0.17",
+    "java_vendor": "Homebrew"
+  },
+  "rewrite_result": {
+    "rewritten_data_files_count": 200,
+    "added_data_files_count": 1,
+    "rewritten_bytes_count": 4469873,
+    "failed_data_files_count": 0,
+    "removed_delete_files_count": 0
+  },
+  "results": {
+    "pre_compaction": {
+      "file_count": 200,
+      "metadata_row_count": 1000000,
+      "manifest_count": 2,
+      "snapshot_count": 200,
+      "timing": {
+        "median_s": 0.24006520793773234,
+        "min_s": 0.23117887508124113,
+        "max_s": 0.24549712496809661,
+        "stdev_s": 0.005230770975192824
+      }
+    },
+    "post_compaction": {
+      "file_count": 1,
+      "metadata_row_count": 1000000,
+      "manifest_count": 3,
+      "snapshot_count": 201,
+      "timing": {
+        "median_s": 0.09624999994412065,
+        "min_s": 0.09316812502220273,
+        "max_s": 0.10843529202975333,
+        "stdev_s": 0.005080535573011684
+      }
+    },
+    "compaction_duration_s": 1.2959243750665337,
+    "median_scan_speedup": 2.494183980021878,
+    "file_count_reduction_pct": 99.5,
+    "content_verified": true,
+    "checksums": {
+      "row_count": 1000000,
+      "checksum_1": 499999500063,
+      "checksum_2": 499999516599,
+      "checksum_entity": 10000000
+    }
+  },
+  "checkpoints": [
+    {
+      "phase": "pre_compaction",
+      "batch": 25,
+      "file_count": 25,
+      "metadata_row_count": 125000,
+      "manifest_count": 25,
+      "snapshot_count": 25,
+      "timing": {
+        "median_s": 0.08556379098445177,
+        "min_s": 0.08247691695578396,
+        "max_s": 0.08923649997450411,
+        "stdev_s": 0.0023007474204137976
+      }
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 50,
+      "file_count": 50,
+      "metadata_row_count": 250000,
+      "manifest_count": 50,
+      "snapshot_count": 50,
+      "timing": {
+        "median_s": 0.13039400009438396,
+        "min_s": 0.12181204091757536,
+        "max_s": 0.14161329180933535,
+        "stdev_s": 0.006601894866639093
+      }
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 75,
+      "file_count": 75,
+      "metadata_row_count": 375000,
+      "manifest_count": 75,
+      "snapshot_count": 75,
+      "timing": {
+        "median_s": 0.17333845887333155,
+        "min_s": 0.17086145794019103,
+        "max_s": 0.18453958304598927,
+        "stdev_s": 0.004788647402049017
+      }
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 100,
+      "file_count": 100,
+      "metadata_row_count": 500000,
+      "manifest_count": 1,
+      "snapshot_count": 100,
+      "timing": {
+        "median_s": 0.12840220797806978,
+        "min_s": 0.12245758296921849,
+        "max_s": 0.16277075000107288,
+        "stdev_s": 0.013521040571332509
+      }
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 125,
+      "file_count": 125,
+      "metadata_row_count": 625000,
+      "manifest_count": 26,
+      "snapshot_count": 125,
+      "timing": {
+        "median_s": 0.18876249995082617,
+        "min_s": 0.1747000420000404,
+        "max_s": 0.20559779205359519,
+        "stdev_s": 0.010372080572248114
+      }
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 150,
+      "file_count": 150,
+      "metadata_row_count": 750000,
+      "manifest_count": 51,
+      "snapshot_count": 150,
+      "timing": {
+        "median_s": 0.20999250002205372,
+        "min_s": 0.2041138329077512,
+        "max_s": 0.22840808401815593,
+        "stdev_s": 0.008013132179055008
+      }
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 175,
+      "file_count": 175,
+      "metadata_row_count": 875000,
+      "manifest_count": 76,
+      "snapshot_count": 175,
+      "timing": {
+        "median_s": 0.2721580001525581,
+        "min_s": 0.2501490409485996,
+        "max_s": 0.2802687920629978,
+        "stdev_s": 0.010163257017679226
+      }
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 200,
+      "file_count": 200,
+      "metadata_row_count": 1000000,
+      "manifest_count": 2,
+      "snapshot_count": 200,
+      "timing": {
+        "median_s": 0.24006520793773234,
+        "min_s": 0.23117887508124113,
+        "max_s": 0.24549712496809661,
+        "stdev_s": 0.005230770975192824
+      }
+    },
+    {
+      "phase": "post_compaction",
+      "batch": 200,
+      "file_count": 1,
+      "metadata_row_count": 1000000,
+      "manifest_count": 3,
+      "snapshot_count": 201,
+      "timing": {
+        "median_s": 0.09624999994412065,
+        "min_s": 0.09316812502220273,
+        "max_s": 0.10843529202975333,
+        "stdev_s": 0.005080535573011684
+      }
+    }
+  ],
+  "raw_measurements": [
+    {
+      "phase": "pre_compaction",
+      "batch": 25,
+      "file_count": 25,
+      "metadata_row_count": 125000,
+      "manifest_count": 25,
+      "snapshot_count": 25,
+      "row_count": 125000,
+      "repetition": 1,
+      "scan_time_s": 0.08556379098445177
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 25,
+      "file_count": 25,
+      "metadata_row_count": 125000,
+      "manifest_count": 25,
+      "snapshot_count": 25,
+      "row_count": 125000,
+      "repetition": 2,
+      "scan_time_s": 0.08318875008262694
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 25,
+      "file_count": 25,
+      "metadata_row_count": 125000,
+      "manifest_count": 25,
+      "snapshot_count": 25,
+      "row_count": 125000,
+      "repetition": 3,
+      "scan_time_s": 0.08594262483529747
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 25,
+      "file_count": 25,
+      "metadata_row_count": 125000,
+      "manifest_count": 25,
+      "snapshot_count": 25,
+      "row_count": 125000,
+      "repetition": 4,
+      "scan_time_s": 0.08247691695578396
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 25,
+      "file_count": 25,
+      "metadata_row_count": 125000,
+      "manifest_count": 25,
+      "snapshot_count": 25,
+      "row_count": 125000,
+      "repetition": 5,
+      "scan_time_s": 0.08923649997450411
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 25,
+      "file_count": 25,
+      "metadata_row_count": 125000,
+      "manifest_count": 25,
+      "snapshot_count": 25,
+      "row_count": 125000,
+      "repetition": 6,
+      "scan_time_s": 0.08593658311292529
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 25,
+      "file_count": 25,
+      "metadata_row_count": 125000,
+      "manifest_count": 25,
+      "snapshot_count": 25,
+      "row_count": 125000,
+      "repetition": 7,
+      "scan_time_s": 0.08352029114030302
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 50,
+      "file_count": 50,
+      "metadata_row_count": 250000,
+      "manifest_count": 50,
+      "snapshot_count": 50,
+      "row_count": 250000,
+      "repetition": 1,
+      "scan_time_s": 0.12181204091757536
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 50,
+      "file_count": 50,
+      "metadata_row_count": 250000,
+      "manifest_count": 50,
+      "snapshot_count": 50,
+      "row_count": 250000,
+      "repetition": 2,
+      "scan_time_s": 0.1320416668895632
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 50,
+      "file_count": 50,
+      "metadata_row_count": 250000,
+      "manifest_count": 50,
+      "snapshot_count": 50,
+      "row_count": 250000,
+      "repetition": 3,
+      "scan_time_s": 0.13057008292526007
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 50,
+      "file_count": 50,
+      "metadata_row_count": 250000,
+      "manifest_count": 50,
+      "snapshot_count": 50,
+      "row_count": 250000,
+      "repetition": 4,
+      "scan_time_s": 0.13015645882114768
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 50,
+      "file_count": 50,
+      "metadata_row_count": 250000,
+      "manifest_count": 50,
+      "snapshot_count": 50,
+      "row_count": 250000,
+      "repetition": 5,
+      "scan_time_s": 0.14161329180933535
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 50,
+      "file_count": 50,
+      "metadata_row_count": 250000,
+      "manifest_count": 50,
+      "snapshot_count": 50,
+      "row_count": 250000,
+      "repetition": 6,
+      "scan_time_s": 0.13039400009438396
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 50,
+      "file_count": 50,
+      "metadata_row_count": 250000,
+      "manifest_count": 50,
+      "snapshot_count": 50,
+      "row_count": 250000,
+      "repetition": 7,
+      "scan_time_s": 0.12258216715417802
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 75,
+      "file_count": 75,
+      "metadata_row_count": 375000,
+      "manifest_count": 75,
+      "snapshot_count": 75,
+      "row_count": 375000,
+      "repetition": 1,
+      "scan_time_s": 0.18453958304598927
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 75,
+      "file_count": 75,
+      "metadata_row_count": 375000,
+      "manifest_count": 75,
+      "snapshot_count": 75,
+      "row_count": 375000,
+      "repetition": 2,
+      "scan_time_s": 0.17333845887333155
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 75,
+      "file_count": 75,
+      "metadata_row_count": 375000,
+      "manifest_count": 75,
+      "snapshot_count": 75,
+      "row_count": 375000,
+      "repetition": 3,
+      "scan_time_s": 0.17086145794019103
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 75,
+      "file_count": 75,
+      "metadata_row_count": 375000,
+      "manifest_count": 75,
+      "snapshot_count": 75,
+      "row_count": 375000,
+      "repetition": 4,
+      "scan_time_s": 0.17816683393903077
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 75,
+      "file_count": 75,
+      "metadata_row_count": 375000,
+      "manifest_count": 75,
+      "snapshot_count": 75,
+      "row_count": 375000,
+      "repetition": 5,
+      "scan_time_s": 0.1728417919948697
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 75,
+      "file_count": 75,
+      "metadata_row_count": 375000,
+      "manifest_count": 75,
+      "snapshot_count": 75,
+      "row_count": 375000,
+      "repetition": 6,
+      "scan_time_s": 0.1723562499973923
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 75,
+      "file_count": 75,
+      "metadata_row_count": 375000,
+      "manifest_count": 75,
+      "snapshot_count": 75,
+      "row_count": 375000,
+      "repetition": 7,
+      "scan_time_s": 0.17794233304448426
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 100,
+      "file_count": 100,
+      "metadata_row_count": 500000,
+      "manifest_count": 1,
+      "snapshot_count": 100,
+      "row_count": 500000,
+      "repetition": 1,
+      "scan_time_s": 0.1298366670962423
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 100,
+      "file_count": 100,
+      "metadata_row_count": 500000,
+      "manifest_count": 1,
+      "snapshot_count": 100,
+      "row_count": 500000,
+      "repetition": 2,
+      "scan_time_s": 0.12245758296921849
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 100,
+      "file_count": 100,
+      "metadata_row_count": 500000,
+      "manifest_count": 1,
+      "snapshot_count": 100,
+      "row_count": 500000,
+      "repetition": 3,
+      "scan_time_s": 0.12736854190006852
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 100,
+      "file_count": 100,
+      "metadata_row_count": 500000,
+      "manifest_count": 1,
+      "snapshot_count": 100,
+      "row_count": 500000,
+      "repetition": 4,
+      "scan_time_s": 0.12903295806609094
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 100,
+      "file_count": 100,
+      "metadata_row_count": 500000,
+      "manifest_count": 1,
+      "snapshot_count": 100,
+      "row_count": 500000,
+      "repetition": 5,
+      "scan_time_s": 0.16277075000107288
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 100,
+      "file_count": 100,
+      "metadata_row_count": 500000,
+      "manifest_count": 1,
+      "snapshot_count": 100,
+      "row_count": 500000,
+      "repetition": 6,
+      "scan_time_s": 0.12840220797806978
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 100,
+      "file_count": 100,
+      "metadata_row_count": 500000,
+      "manifest_count": 1,
+      "snapshot_count": 100,
+      "row_count": 500000,
+      "repetition": 7,
+      "scan_time_s": 0.12830825010314584
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 125,
+      "file_count": 125,
+      "metadata_row_count": 625000,
+      "manifest_count": 26,
+      "snapshot_count": 125,
+      "row_count": 625000,
+      "repetition": 1,
+      "scan_time_s": 0.18288033409044147
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 125,
+      "file_count": 125,
+      "metadata_row_count": 625000,
+      "manifest_count": 26,
+      "snapshot_count": 125,
+      "row_count": 625000,
+      "repetition": 2,
+      "scan_time_s": 0.18470941693522036
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 125,
+      "file_count": 125,
+      "metadata_row_count": 625000,
+      "manifest_count": 26,
+      "snapshot_count": 125,
+      "row_count": 625000,
+      "repetition": 3,
+      "scan_time_s": 0.1995006250217557
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 125,
+      "file_count": 125,
+      "metadata_row_count": 625000,
+      "manifest_count": 26,
+      "snapshot_count": 125,
+      "row_count": 625000,
+      "repetition": 4,
+      "scan_time_s": 0.18876249995082617
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 125,
+      "file_count": 125,
+      "metadata_row_count": 625000,
+      "manifest_count": 26,
+      "snapshot_count": 125,
+      "row_count": 625000,
+      "repetition": 5,
+      "scan_time_s": 0.18902237503789365
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 125,
+      "file_count": 125,
+      "metadata_row_count": 625000,
+      "manifest_count": 26,
+      "snapshot_count": 125,
+      "row_count": 625000,
+      "repetition": 6,
+      "scan_time_s": 0.20559779205359519
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 125,
+      "file_count": 125,
+      "metadata_row_count": 625000,
+      "manifest_count": 26,
+      "snapshot_count": 125,
+      "row_count": 625000,
+      "repetition": 7,
+      "scan_time_s": 0.1747000420000404
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 150,
+      "file_count": 150,
+      "metadata_row_count": 750000,
+      "manifest_count": 51,
+      "snapshot_count": 150,
+      "row_count": 750000,
+      "repetition": 1,
+      "scan_time_s": 0.22840808401815593
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 150,
+      "file_count": 150,
+      "metadata_row_count": 750000,
+      "manifest_count": 51,
+      "snapshot_count": 150,
+      "row_count": 750000,
+      "repetition": 2,
+      "scan_time_s": 0.21706341695971787
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 150,
+      "file_count": 150,
+      "metadata_row_count": 750000,
+      "manifest_count": 51,
+      "snapshot_count": 150,
+      "row_count": 750000,
+      "repetition": 3,
+      "scan_time_s": 0.20872195903211832
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 150,
+      "file_count": 150,
+      "metadata_row_count": 750000,
+      "manifest_count": 51,
+      "snapshot_count": 150,
+      "row_count": 750000,
+      "repetition": 4,
+      "scan_time_s": 0.2041138329077512
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 150,
+      "file_count": 150,
+      "metadata_row_count": 750000,
+      "manifest_count": 51,
+      "snapshot_count": 150,
+      "row_count": 750000,
+      "repetition": 5,
+      "scan_time_s": 0.21708745788782835
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 150,
+      "file_count": 150,
+      "metadata_row_count": 750000,
+      "manifest_count": 51,
+      "snapshot_count": 150,
+      "row_count": 750000,
+      "repetition": 6,
+      "scan_time_s": 0.20999250002205372
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 150,
+      "file_count": 150,
+      "metadata_row_count": 750000,
+      "manifest_count": 51,
+      "snapshot_count": 150,
+      "row_count": 750000,
+      "repetition": 7,
+      "scan_time_s": 0.2097232500091195
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 175,
+      "file_count": 175,
+      "metadata_row_count": 875000,
+      "manifest_count": 76,
+      "snapshot_count": 175,
+      "row_count": 875000,
+      "repetition": 1,
+      "scan_time_s": 0.2802687920629978
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 175,
+      "file_count": 175,
+      "metadata_row_count": 875000,
+      "manifest_count": 76,
+      "snapshot_count": 175,
+      "row_count": 875000,
+      "repetition": 2,
+      "scan_time_s": 0.26665037497878075
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 175,
+      "file_count": 175,
+      "metadata_row_count": 875000,
+      "manifest_count": 76,
+      "snapshot_count": 175,
+      "row_count": 875000,
+      "repetition": 3,
+      "scan_time_s": 0.26660616719163954
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 175,
+      "file_count": 175,
+      "metadata_row_count": 875000,
+      "manifest_count": 76,
+      "snapshot_count": 175,
+      "row_count": 875000,
+      "repetition": 4,
+      "scan_time_s": 0.2721580001525581
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 175,
+      "file_count": 175,
+      "metadata_row_count": 875000,
+      "manifest_count": 76,
+      "snapshot_count": 175,
+      "row_count": 875000,
+      "repetition": 5,
+      "scan_time_s": 0.2726287501864135
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 175,
+      "file_count": 175,
+      "metadata_row_count": 875000,
+      "manifest_count": 76,
+      "snapshot_count": 175,
+      "row_count": 875000,
+      "repetition": 6,
+      "scan_time_s": 0.27930845809169114
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 175,
+      "file_count": 175,
+      "metadata_row_count": 875000,
+      "manifest_count": 76,
+      "snapshot_count": 175,
+      "row_count": 875000,
+      "repetition": 7,
+      "scan_time_s": 0.2501490409485996
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 200,
+      "file_count": 200,
+      "metadata_row_count": 1000000,
+      "manifest_count": 2,
+      "snapshot_count": 200,
+      "row_count": 1000000,
+      "repetition": 1,
+      "scan_time_s": 0.2401582091115415
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 200,
+      "file_count": 200,
+      "metadata_row_count": 1000000,
+      "manifest_count": 2,
+      "snapshot_count": 200,
+      "row_count": 1000000,
+      "repetition": 2,
+      "scan_time_s": 0.24549712496809661
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 200,
+      "file_count": 200,
+      "metadata_row_count": 1000000,
+      "manifest_count": 2,
+      "snapshot_count": 200,
+      "row_count": 1000000,
+      "repetition": 3,
+      "scan_time_s": 0.23764304188080132
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 200,
+      "file_count": 200,
+      "metadata_row_count": 1000000,
+      "manifest_count": 2,
+      "snapshot_count": 200,
+      "row_count": 1000000,
+      "repetition": 4,
+      "scan_time_s": 0.23117887508124113
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 200,
+      "file_count": 200,
+      "metadata_row_count": 1000000,
+      "manifest_count": 2,
+      "snapshot_count": 200,
+      "row_count": 1000000,
+      "repetition": 5,
+      "scan_time_s": 0.23494491702876985
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 200,
+      "file_count": 200,
+      "metadata_row_count": 1000000,
+      "manifest_count": 2,
+      "snapshot_count": 200,
+      "row_count": 1000000,
+      "repetition": 6,
+      "scan_time_s": 0.24536491581238806
+    },
+    {
+      "phase": "pre_compaction",
+      "batch": 200,
+      "file_count": 200,
+      "metadata_row_count": 1000000,
+      "manifest_count": 2,
+      "snapshot_count": 200,
+      "row_count": 1000000,
+      "repetition": 7,
+      "scan_time_s": 0.24006520793773234
+    },
+    {
+      "phase": "post_compaction",
+      "batch": 200,
+      "file_count": 1,
+      "metadata_row_count": 1000000,
+      "manifest_count": 3,
+      "snapshot_count": 201,
+      "row_count": 1000000,
+      "repetition": 1,
+      "scan_time_s": 0.09540495905093849
+    },
+    {
+      "phase": "post_compaction",
+      "batch": 200,
+      "file_count": 1,
+      "metadata_row_count": 1000000,
+      "manifest_count": 3,
+      "snapshot_count": 201,
+      "row_count": 1000000,
+      "repetition": 2,
+      "scan_time_s": 0.09467200003564358
+    },
+    {
+      "phase": "post_compaction",
+      "batch": 200,
+      "file_count": 1,
+      "metadata_row_count": 1000000,
+      "manifest_count": 3,
+      "snapshot_count": 201,
+      "row_count": 1000000,
+      "repetition": 3,
+      "scan_time_s": 0.09931924985721707
+    },
+    {
+      "phase": "post_compaction",
+      "batch": 200,
+      "file_count": 1,
+      "metadata_row_count": 1000000,
+      "manifest_count": 3,
+      "snapshot_count": 201,
+      "row_count": 1000000,
+      "repetition": 4,
+      "scan_time_s": 0.09316812502220273
+    },
+    {
+      "phase": "post_compaction",
+      "batch": 200,
+      "file_count": 1,
+      "metadata_row_count": 1000000,
+      "manifest_count": 3,
+      "snapshot_count": 201,
+      "row_count": 1000000,
+      "repetition": 5,
+      "scan_time_s": 0.09751700004562736
+    },
+    {
+      "phase": "post_compaction",
+      "batch": 200,
+      "file_count": 1,
+      "metadata_row_count": 1000000,
+      "manifest_count": 3,
+      "snapshot_count": 201,
+      "row_count": 1000000,
+      "repetition": 6,
+      "scan_time_s": 0.09624999994412065
+    },
+    {
+      "phase": "post_compaction",
+      "batch": 200,
+      "file_count": 1,
+      "metadata_row_count": 1000000,
+      "manifest_count": 3,
+      "snapshot_count": 201,
+      "row_count": 1000000,
+      "repetition": 7,
+      "scan_time_s": 0.10843529202975333
+    }
+  ]
+}
